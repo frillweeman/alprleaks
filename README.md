@@ -1,5 +1,7 @@
 # ALPR Leaks
 
+![CSV file of data collected from script](./docs/csv.png)
+
 Log license plates, vehicle make, vehicle color, and vehicle model to a CSV along with a JPEG image of the vehicle from Motorola ALPRs exposed to the public internet.
 
 This script is preloaded with 3 IP addresses, but more can be added.
