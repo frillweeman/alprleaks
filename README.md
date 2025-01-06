@@ -6,6 +6,8 @@ Log license plates, vehicle make, vehicle color, and vehicle model to a CSV alon
 
 This script is preloaded with 3 IP addresses, but more can be added.
 
+Research credit to [Matt Brown](https://www.youtube.com/@mattbrwn). For more into, watch his [YouTube video](https://youtu.be/0dUnY1641WM?si=A2geeOF-FCunDW-v) reporting this vulnerability.
+
 ## Running Locally
 
 To run this project locally, follow these steps:
