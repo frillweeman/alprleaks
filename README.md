@@ -8,6 +8,12 @@ This script is preloaded with 3 IP addresses, but more can be added.
 
 Research credit to [Matt Brown](https://www.youtube.com/@mattbrwn). For more into, watch his [YouTube video](https://youtu.be/0dUnY1641WM?si=A2geeOF-FCunDW-v) reporting this vulnerability.
 
+### Disclaimer
+
+This script is for educational purposes only. Do not use this script in any way that violates the law. Only use this script on devices you own or have permission to use it on.
+
+This script was thrown together in a short period of time with a lot of assistance from GitHub Copilot. It is not perfect and may not work as expected. Feel free to fix and bugs you find and open a pull request.
+
 ## Running Locally
 
 To run this project locally, follow these steps:
