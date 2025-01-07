@@ -39,7 +39,7 @@ const csvWriter = createObjectCsvWriter({
     { id: 'model', title: 'Model' },
     { id: 'color', title: 'Color' },
     { id: 'licensePlateNumber', title: 'License Plate Number' },
-    { id: 'imagePath', title: 'Image Path' }
+    { id: 'filename', title: 'Filename' }
   ]
 });
 
@@ -91,7 +91,7 @@ systems.forEach((host) => {
       model,
       color: vehicleColor,
       licensePlateNumber: licensePlate,
-      filename: filename,
+      filename,
     };
 
     const hitJson = JSON.stringify(hit, null, 2);
