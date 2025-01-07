@@ -8,11 +8,6 @@ const FEED_COLOR_PATH = '/cam{n}color';
 const DATA_PORT = 5001;
 const OUTPUT_DIR = `${__dirname}/../output`;
 
-interface System {
-  id: string;
-  ipAddress: string;
-}
-
 interface Hit {
   uuid: string;
   systemId: string;
@@ -21,22 +16,13 @@ interface Hit {
   model: string;
   color: string;
   licensePlateNumber: string;
-  imagePath: string;
+  filename: string;
 }
 
-const systems: System[] = [
-  {
-    id: '1',
-    ipAddress: '166.152.44.39'
-  },
-  {
-    id: '2',
-    ipAddress: '166.152.44.38'
-  },
-  {
-    id: '3',
-    ipAddress: '166.152.44.40'
-  },
+const systems: string[] = [
+  '166.152.44.39',
+  '166.152.44.38',
+  '166.152.44.40'
 ];
 
 if (!fs.existsSync(OUTPUT_DIR)) {
@@ -57,8 +43,7 @@ const csvWriter = createObjectCsvWriter({
   ]
 });
 
-systems.forEach(system => {
-  const host = system.ipAddress;
+systems.forEach((host) => {
   const port = DATA_PORT;
   const client = new net.Socket();
   let messageBuffer: Buffer = Buffer.alloc(0);
@@ -75,7 +60,7 @@ systems.forEach(system => {
       const messageEndIndex = messageBuffer.indexOf(messageEnd);
       if (messageEndIndex !== -1) {
         const completeMessage = messageBuffer.slice(0, messageEndIndex + messageEnd.length);
-        processMessage(completeMessage, system.id);
+        processMessage(completeMessage, host);
         messageBuffer = messageBuffer.slice(messageEndIndex + messageEnd.length);
       } else {
         break;
@@ -83,7 +68,7 @@ systems.forEach(system => {
     }
   };
 
-  const processMessage = async (message: Buffer, systemId: string) => {
+  const processMessage = async (message: Buffer, host: string) => {
     const timestamp = new Date().toISOString().replace(/:/g, '-');
     const parts = message.toString('utf-8').split(/[\0\n]+/);
     const equalsIndex = parts.findIndex((part) => part.startsWith('='));
@@ -95,15 +80,18 @@ systems.forEach(system => {
     const model = parts[colorNameIndex + 3].split('"')[3];
     const imagePath = `${OUTPUT_DIR}/${uuid}.jpg`;
 
+    const imagePathParts = imagePath.split('/');
+    const filename = imagePathParts[imagePathParts.length - 1];
+
     const hit: Hit = {
       uuid,
-      systemId,
+      systemId: host,
       timestamp,
       make,
       model,
       color: vehicleColor,
       licensePlateNumber: licensePlate,
-      imagePath: imagePath.split('/')[1],
+      filename: filename,
     };
 
     const hitJson = JSON.stringify(hit, null, 2);
