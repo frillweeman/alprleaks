@@ -4,7 +4,7 @@
 
 Log license plates, vehicle make, vehicle color, and vehicle model to a CSV along with a JPEG image of the vehicle from Motorola ALPRs exposed to the public internet.
 
-This script is preloaded with 3 IP addresses, but more can be added.
+This script is preloaded with 3 IP addresses from Chicago, but more can be added. See [motorola-ip-addresses.json](./motorola-ip-addresses.json) for a list of over 100 IP addresses found through [Shodan](https://shodan.io).
 
 Research credit to [Matt Brown](https://www.youtube.com/@mattbrwn). For more info, watch his [YouTube video](https://youtu.be/0dUnY1641WM?si=A2geeOF-FCunDW-v) reporting this vulnerability.
 
@@ -38,6 +38,10 @@ Make sure you have the following installed on your machine:
   ```sh
   npm install
   ```
+
+### Setup
+
+1. Change the list of IP addresses in [index.ts](./src/index.ts) to the IP addresses you want to monitor. Use [motorola-ip-addresses.json](./motorola-ip-addresses.json) for a list of over 100 IP addresses found through [Shodan](https://shodan.io).
 
 ### Running the Project
 
