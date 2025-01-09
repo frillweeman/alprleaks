@@ -8,6 +8,9 @@ This script is preloaded with 3 IP addresses from Chicago, but more can be added
 
 Research credit to [Matt Brown](https://www.youtube.com/@mattbrwn). For more info, watch his [YouTube video](https://youtu.be/0dUnY1641WM?si=A2geeOF-FCunDW-v) reporting this vulnerability.
 
+### UPDATE: Most Cameras Offline
+**1/9/2025** - Following media reports and action from Motorola, it looks like most Motorla ALPRs have been taken offline, so this script is unlikely to work anymore.
+
 ### Disclaimer
 
 This script is for educational purposes only. Do not use this script in any way that violates the law. Only use this script on devices you own or have permission to use it on.
