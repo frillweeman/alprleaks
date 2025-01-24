@@ -6,7 +6,7 @@ Log license plates, vehicle make, vehicle color, and vehicle model to a CSV alon
 
 This script is preloaded with 3 IP addresses from Chicago, but more can be added. See [motorola-ip-addresses.json](./motorola-ip-addresses.json) for a list of over 100 IP addresses found through [Shodan](https://shodan.io).
 
-Research credit to [Matt Brown](https://www.youtube.com/@mattbrwn). For more info, watch his [YouTube video](https://youtu.be/0dUnY1641WM?si=A2geeOF-FCunDW-v) reporting this vulnerability.
+Research credit to [Matt Brown](https://www.youtube.com/@mattbrwn). For more info, watch his [YouTube video](https://youtu.be/0dUnY1641WM?si=A2geeOF-FCunDW-v) reporting this vulnerability, or read the [404 Media article](https://www.404media.co/researcher-turns-insecure-license-plate-cameras-into-open-source-surveillance-tool/).
 
 ### UPDATE: Most Cameras Offline
 **1/9/2025** - Following media reports and action from Motorola, it looks like most Motorla ALPRs have been taken offline, so this script is unlikely to work anymore.
